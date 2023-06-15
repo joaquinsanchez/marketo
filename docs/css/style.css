@@ -110,13 +110,13 @@ header h2 .color {
 .button-1 {
     display: inline-block;
     position: relative;
-    left:20%;
+    left:30%;
     transform: translateX(-50%);
     text-align: center;
-    background: #FFFFFF;
+    background: #ce94ab;
     border-radius: 3px;
     color: #FFFFFF;
-    width: 180px;
+    width: 160px;
     height: 50px;
     font-size: 18px;
     line-height: 50px;
@@ -127,13 +127,13 @@ header h2 .color {
 .button-2 {
     display: inline-block;
     position: relative;
-    left:20%;
+    left:30%;
     transform: translateX(-50%);
     text-align: center;
-    background:  #FFFFFF;
+    background:  #9aa2b0;
     border-radius: 3px;
     color: #FFFFFF;
-    width: 180px;
+    width: 160px;
     height: 50px;
     font-size: 18px;
     line-height: 50px;
@@ -144,37 +144,19 @@ header h2 .color {
 .button-3 {
     display: inline-block;
     position: relative;
-    left:20%;
+    left:30%;
     transform: translateX(-50%);
     text-align: center;
-    background:  #FFFFFF;
+    background:  #9aa2b0;
     border-radius: 3px;
     color: #FFFFFF;
-    width: 180px;
+    width: 160px;
     height: 50px;
     font-size: 18px;
     line-height: 50px;
     margin: 0 auto;
     bottom: -380px;
 }
-
-.button-4 {
-    display: inline-block;
-    position: relative;
-    left:20%;
-    transform: translateX(-50%);
-    text-align: center;
-    background:  #FFFFFF;
-    border-radius: 3px;
-    color: #FFFFFF;
-    width: 180px;
-    height: 50px;
-    font-size: 18px;
-    line-height: 50px;
-    margin: 0 auto;
-    bottom: -380px;
-}
-
 
 #features ul {
     margin: 20px 50;
