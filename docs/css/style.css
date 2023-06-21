@@ -113,7 +113,7 @@ header h2 .color {
     left:30%;
     transform: translateX(-50%);
     text-align: center;
-    background: #ce94ab;
+    background: #FFFFFF;
     border-radius: 3px;
     color: #FFFFFF;
     width: 160px;
@@ -130,7 +130,7 @@ header h2 .color {
     left:30%;
     transform: translateX(-50%);
     text-align: center;
-    background:  #9aa2b0;
+    background:  #FFFFFF;
     border-radius: 3px;
     color: #FFFFFF;
     width: 160px;
@@ -147,7 +147,7 @@ header h2 .color {
     left:30%;
     transform: translateX(-50%);
     text-align: center;
-    background:  #9aa2b0;
+    background:  #FFFFFF;
     border-radius: 3px;
     color: #FFFFFF;
     width: 160px;
@@ -189,3 +189,5 @@ footer {
     float: center;
     margin-top: 150px;
 }
+
+
