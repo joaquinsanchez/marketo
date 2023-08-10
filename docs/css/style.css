@@ -24,7 +24,7 @@ h2 {
 }
 h3 {
     font-family: 'Crete Round', serif;
-    font-size: 40px;
+    font-size: 35px;
     color: #444;
     font-weight: regular;
     text-transform: None;
@@ -44,6 +44,7 @@ h5 {
     font-weight: bold;
     text-transform: uppercase;
 }
+
 a {
     text-decoration: none;
     color: #444;
