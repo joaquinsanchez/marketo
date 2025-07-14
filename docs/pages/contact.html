@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | SynthWave Dynamics</title>
+    <title>Contacto | Marketo</title>
 
     <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +42,23 @@
         #theme-toggle .fa-sun { display: none; }
         body.light-mode #theme-toggle .fa-sun { display: block; }
         body.light-mode #theme-toggle .fa-moon { display: none; }
+
+        .contact-image-container {
+            flex: 1; /* Allows it to share space equally with the contact info */
+            display: flex;
+            align-items: center; /* Vertically centers the image */
+            justify-content: center; /* Horizontally centers the image */
+            min-width: 300px;
+        }
+        
+        .contact-image {
+            width: 250px;  /* Set a fixed width */
+            height: 250px; /* Set the same height to create a square */
+            border-radius: 50%; /* This is the magic property that makes it a circle */
+            object-fit: cover; /* Prevents the image from being squished if it's not a perfect square */
+            border: 3px solid var(--primary-surface-color); /* A nice border that matches the theme */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
     </style>
 </head>
 <body>
@@ -83,6 +100,10 @@
                         <div class="contact-info-item"><i class="fa-solid fa-envelope"></i><span>joaquins@ucm.es</span></div>
                         <div class="contact-info-item"><i class="fa-solid fa-phone"></i><span>+34 91 394 71 28</span></div>
                     </div>
+                        <div class="contact-image-container">
+        <!-- You can replace the src with a link to your own photo -->
+                        <img src="../images/facul.jpg" alt="A portrait of the contact person" class="contact-image">
+                        </div>
                 </div>
             </div>
         </section>
