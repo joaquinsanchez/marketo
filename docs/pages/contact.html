@@ -30,7 +30,7 @@
         a:hover { color: var(--accent-hover-color); }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
         section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; letter-spacing: 2px; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; letter-spacing: 0px; }
         
         /* --- 2. Navigation Bar --- */
         .navbar { position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height); background-color: var(--primary-surface-color); z-index: 1000; transition: box-shadow 0.3s ease, background-color 0.3s ease; border-bottom: 1px solid var(--border-color); }
@@ -62,25 +62,192 @@
         #theme-toggle .fa-sun { display: none; }
         body.light-mode #theme-toggle .fa-sun { display: block; }
         body.light-mode #theme-toggle .fa-moon { display: none; }
-        .hamburger-menu { display: none; }
-
-        /* --- 3. Page Specific Styles --- */
+        .hamburger-menu { display: none; }        /* --- 3. Page Specific Styles --- */
         main { padding-top: var(--navbar-height); }
-        .footer { background-color: var(--primary-surface-color); color: var(--text-color); text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); }
-        .contact-content { display: flex; gap: 50px; align-items: center; }
-        .contact-info, .contact-image-container { flex: 1; min-width: 300px; }
-        .contact-info-item { display: flex; align-items: center; margin-bottom: 25px; font-size: 1.1rem; }
-        .contact-info-item i { font-size: 1.5rem; color: var(--accent-color); margin-right: 20px; width: 30px; text-align: center; }
-        .contact-image-container { display: flex; justify-content: center; }
-        .contact-image {
-            width: 250px; height: 250px; border-radius: 50%;
-            object-fit: cover; border: 3px solid var(--border-color);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        .footer { background-color: var(--primary-surface-color); color: var(--text-color); text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); }        /* Main Contact Section */
+        .contact-content { 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            gap: 60px;
+        }        /* Profile Card */
+        .contact-profile {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .profile-card {
+            background-color: var(--primary-surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        body.light-mode .profile-card:hover {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        .profile-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-hover-color));
+        }        /* Main Professor Card */
+        .main-profile {
+            padding: 40px;
+            flex: 0 1 400px;
+            min-width: 300px;
+        }
+        .profile-image-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--border-color);
+            transition: transform 0.3s ease;
+        }
+        .profile-card:hover .profile-image {
+            transform: scale(1.05);
+        }
+        .profile-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            border: 3px solid var(--bg-color);
+        }
+        .profile-info h3 {
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+        .profile-title {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .profile-department {
+            color: var(--heading-color);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .profile-institution {
+            color: var(--text-color);
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }        .profile-contact {
+            margin-bottom: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .contact-item i {
+            color: var(--accent-color);
+            width: 16px;
+            text-align: center;
+        }
+        .contact-item a {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        .contact-item a:hover {
+            color: var(--accent-hover-color);
         }
 
-        /* --- 4. Mobile Responsiveness --- */
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--primary-surface-color);
+            padding: 80px 0;
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+        .faq-question:hover {
+            background-color: var(--border-color);
+        }
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--heading-color);
+            flex-grow: 1;
+        }
+        .faq-question i {
+            color: var(--accent-color);
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            margin-left: 15px;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            background-color: var(--primary-surface-color);
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 30px 25px 30px;
+        }
+        .faq-answer p {
+            margin: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-top: 15px;
+        }/* --- 4. Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .section-title { font-size: 2rem; }
+            
             /* --- Navbar Fixes --- */
             .navbar .container { justify-content: space-between; }
             .hamburger-menu { display: block; font-size: 1.5rem; color: var(--heading-color); background: transparent; border: none; cursor: pointer; z-index: 1002; }
@@ -107,11 +274,55 @@
             body.light-mode .dropdown .dropdown-menu { background-color: rgba(0,0,0,0.05); }
             .dropdown.open .dropdown-menu { display: block; }
             .dropdown-menu li a { padding: 10px 20px; font-size: 0.9rem; }
-            #theme-toggle { position: absolute; bottom: 30px; }
+            #theme-toggle { position: absolute; bottom: 30px; }            /* --- Contact Page Mobile Adjustments --- */
+            .contact-content { 
+                flex-direction: column; 
+                align-items: center;
+                gap: 40px;
+            }
             
-            /* --- Contact Page Content Adjustments --- */
-            .contact-content { flex-direction: column-reverse; /* Puts image on top */ }
-            .contact-info { margin-top: 40px; }
+            .contact-profile {
+                flex-direction: column;
+                gap: 25px;
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .main-profile {
+                padding: 30px 20px;
+                flex: none;
+                min-width: unset;
+            }
+            
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profile-card:hover {
+                transform: none;
+            }
+            
+            /* FAQ Mobile Adjustments */
+            .faq-question {
+                padding: 20px;
+            }
+            
+            .faq-question h3 {
+                font-size: 1rem;
+            }
+            
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px 20px;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+        }          @media (max-width: 480px) {
+            .main-profile {
+                padding: 25px 15px;
+            }
         }
     </style>
 </head>
@@ -123,9 +334,8 @@
         ><button aria-label="Toggle menu" class="hamburger-menu">
           <i class="fa-solid fa-bars"></i>
         </button>
-        <nav class="nav-menu">
-          <ul class="nav-links">
-            <li><a class="active" href="../index.html">Inicio</a></li>
+        <nav class="nav-menu">          <ul class="nav-links">
+            <li><a href="../index.html">Inicio</a></li>
             <li class="dropdown">
               <a class="noclick" href="#"
                 >Guía <i class="fa-solid fa-caret-down"></i
@@ -141,35 +351,125 @@
 
             <li><a href="guia-fase5.html">Dinámica de juego</a></li>
             <li><a href="decisiones.html">Decisiones y resultados</a></li>
-            <li><a href="contact.html">Contacto</a></li>
+            <li><a href="contact.html" class="active">Contacto</a></li>
           </ul>
           <button id="theme-toggle" title="Toggle theme">
             <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
           </button>
         </nav>
       </div>
-    </header>
-    <main>
+    </header>    <main>
         <section id="contact-page">
             <div class="container">
-                <h1 class="section-title">Datos de contacto</h1>
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <div class="contact-info-item">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span><a href="https://www.ucm.es/directorio?id=9659">Prof. Joaquín Sánchez</a> (joaquins@ucm.es)</span>
+                <h1 class="section-title">Datos de contacto</h1>                <div class="contact-content">
+                    <div class="contact-profile">
+                        <!-- First Professor Card -->
+                        <div class="profile-card main-profile">
+                            <div class="profile-image-container">
+                                <img src="../images/facul.jpg" alt="Prof. Teresa Pintado" class="profile-image">
+                                <div class="profile-badge">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                            </div>
+                            <div class="profile-info">
+                                <h3>Prof. Teresa Pintado</h3>
+                                <p class="profile-title">Profesor Responsable</p>
+                                <p class="profile-department">Departamento de Marketing</p>
+                                <p class="profile-institution">Universidad Complutense de Madrid</p>
+                                <div class="profile-contact">
+                                    <div class="contact-item">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <span><a href="mailto:tpintado@ucm.es">tpintado@ucm.es</a></span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <span>+34 91 394 71 28</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>Despacho C-112</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="contact-info-item">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>Avenida Complutense s/n - Madrid 28040<br>Desp. C-112</span>
-                        </div>
-                        <div class="contact-info-item">
-                            <i class="fa-solid fa-phone"></i>
-                            <span>+34 91 394 71 28</span>
+
+                        <!-- Second Professor Card -->
+                        <div class="profile-card main-profile">
+                            <div class="profile-image-container">
+                                <img src="../images/facul.jpg" alt="Prof. Joaquín Sánchez" class="profile-image">
+                                <div class="profile-badge">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                            </div>
+                            <div class="profile-info">
+                                <h3>Prof. Joaquín Sánchez</h3>
+                                <p class="profile-title">Desarrollador del simulador</p>
+                                <p class="profile-department">Departamento de Marketing</p>
+                                <p class="profile-institution">Universidad Complutense de Madrid</p>
+                                <div class="profile-contact">
+                                    <div class="contact-item">
+                                        <i class="fa-solid fa-envelope"></i>
+                                        <span><a href="mailto:joaquins@ucm.es">joaquins@ucm.es</a></span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fa-solid fa-phone"></i>
+                                        <span>+34 91 394 71 29</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span>Despacho C-114</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="contact-image-container">
-                        <img src="../images/facul.jpg" alt="A portrait of the contact person" class="contact-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq-section" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">Preguntas frecuentes</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Cómo accedo al simulador Marketo?</h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Para acceder al simulador necesitas las credenciales que se proporcionan en clase. Una vez que tengas tu usuario y contraseña, puedes ingresar a través de la sección "Decisiones y resultados" del menú principal.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Cuándo se publican los resultados de cada período?</h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Los resultados se actualizan automáticamente tras cada período de simulación. Normalmente, esto ocurre cada semana según el calendario académico. Recibirás una notificación por email cuando los nuevos resultados estén disponibles.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Qué hago si tengo problemas técnicos con el simulador?</h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Si experimentas dificultades técnicas, primero revisa la guía de usuario. Si el problema persiste, contacta al profesor a través del email institucional. Incluye una descripción detallada del problema y capturas de pantalla si es posible.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>¿Puedo cambiar mis decisiones una vez enviadas?</h3>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Una vez que hayas enviado tus decisiones para un período, no es posible modificarlas. Por eso es importante revisar cuidadosamente todas las decisiones antes de confirmar el envío. Te recomendamos discutir las estrategias con tu equipo antes de tomar decisiones finales.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -177,7 +477,7 @@
     </main>
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 <a href="#">Versión 1.2</a> // Desarrollado con fines formativos.</p>
+            <p>&copy; 2025 - Versión 1.2 // Desarrollado con fines formativos.</p>
         </div>
     </footer>
     <script>
@@ -228,9 +528,7 @@
                 navMenu.classList.remove('active');
                 document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
             }
-        });
-
-        // --- Close menu when a link is clicked ---
+        });        // --- Close menu when a link is clicked ---
         document.querySelectorAll('.nav-menu a').forEach(link => {
             if (!link.parentElement.classList.contains('dropdown')) {
                 link.addEventListener('click', () => {
@@ -239,6 +537,36 @@
                     }
                 });
             }
+        });        // --- Contact Page Enhancements ---
+        
+        // Add hover effect for main profile image
+        const profileImage = document.querySelector('.profile-image');
+        if (profileImage) {
+            profileImage.addEventListener('mouseenter', () => {
+                profileImage.style.transform = 'scale(1.05) rotate(2deg)';
+            });
+            
+            profileImage.addEventListener('mouseleave', () => {
+                profileImage.style.transform = 'scale(1) rotate(0deg)';
+            });
+        }
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+                
+                // Toggle current FAQ item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
         });
     </script>
 </body>
