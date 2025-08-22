@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketo | Simulador de Marketing</title>
-    <!-- Google Fonts: Poppins for headings, Lato for body text -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        /* --- 1. CSS Variables and Global Styles --- */
         html, body { scrollbar-width: none; -ms-overflow-style: none; overflow: -moz-scrollbars-none; }
         html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
         :root {
@@ -32,7 +30,6 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
         section { padding: 80px 0; }
         .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; letter-spacing: 0px; }
-        /* --- 2. Navigation Bar --- */
         .navbar { position: fixed; top: 0; left: 0; width: 100%; height: var(--navbar-height); background-color: var(--primary-surface-color); z-index: 1000; transition: box-shadow 0.3s ease, background-color 0.3s ease; border-bottom: 1px solid var(--border-color); }
         .navbar-scrolled { background-color: rgba(30, 30, 30, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid transparent; box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); }
         body.light-mode .navbar-scrolled { background-color: rgba(255, 255, 255, 0.85); }
@@ -63,7 +60,6 @@
         body.light-mode #theme-toggle .fa-sun { display: block; }
         body.light-mode #theme-toggle .fa-moon { display: none; }
         .hamburger-menu { display: none; }
-        /* --- 3. Page Content --- */
         main { padding-top: var(--navbar-height); }
         .hero { position: relative; height: 42vh; min-height: 300px; display: flex; justify-content: center; align-items: center; text-align: center; overflow: hidden; }
         .hero-video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: 0; }
@@ -76,40 +72,39 @@
         .hero h1 {color: #ffffff; font-size: 3rem; margin-bottom: 10px; text-shadow: 0 0 20px rgba(0,0,0,0.5);  }
         .hero p { font-size: 1.5rem; font-family: 'Poppins', sans-serif; color: #ffffff; margin-top: 20px; text-shadow: 0 0 10px rgba(0,0,0,0.5); }
         
-        /* --- UPDATED: Dynamic Card Styles --- */
         .features-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 30px; 
-            perspective: 1000px; /* Enables 3D space for child elements */
+            perspective: 1000px; 
         }
         .feature-item {
             text-align: center; padding: 40px 30px; background-color: var(--primary-surface-color);
             border: 1px solid var(--border-color); border-radius: 8px;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
         }
         .feature-item:hover {
             border-color: var(--accent-color);
-            transform: translateY(-10px) rotateX(5deg); /* Lifts and tilts the card */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 25px rgba(245, 124, 0, 0.4); /* Depth shadow + accent glow */
+            transform: translateY(-10px) rotateX(5deg); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 25px rgba(245, 124, 0, 0.4); 
         }
         body.light-mode .feature-item:hover {
             box-shadow: 0 20px 40px rgba(0,0,0,0.1), 0 0 25px rgba(245, 124, 0, 0.4);
         }
         .feature-item .icon {
             font-size: 3rem; color: var(--accent-color); margin-bottom: 20px;
-            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Icon animation */
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); 
         }
         .feature-item:hover .icon {
-            transform: scale(1.15) rotate(15deg); /* Icon scales and rotates on hover */
+            transform: scale(1.15) rotate(15deg); 
         }
         .feature-item h3 {
-            transition: color 0.3s ease; /* Heading animation */
+            transition: color 0.3s ease; 
         }
         .feature-item:hover h3 {
-            color: var(--accent-color); /* Heading color changes on hover */
+            color: var(--accent-color); 
         }
-        /* --- END OF UPDATED SECTION --- */
+   
 
         .steps-container { display: flex; justify-content: space-between; align-items: flex-start; position: relative; gap: 20px; }
         .step-item { text-align: center; width: 23%; flex-shrink: 0; }
@@ -151,7 +146,6 @@
         .back-to-top:hover { transform: scale(1.1); }
         .back-to-top.visible { opacity: 1; visibility: visible; }
 
-        /* --- 4. Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .callout { margin: 30px 0; padding: 20px; }
             .callout p { font-size: 1.1rem; }
@@ -185,7 +179,7 @@
 <body>
     <header class="navbar">
         <div class="container">
-            <a href="index.html" class="navbar-logo"><i class="fa-solid fa-chart-simple"></i>Marketo!</a>
+            <a href="index.html" class="navbar-logo"><i class="fa-solid fa-chart-simple"></i>Mar<span style="color: var(--accent-color)">k</span>eto!</a>
             <button class="hamburger-menu" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
             <nav class="nav-menu">
                 <ul class="nav-links">
@@ -200,7 +194,7 @@
                     </li>
                     <li><a href="pages/guia-fase5.html">Dinámica de juego</a></li>
                     <li><a href="pages/decisiones.html">Decisiones y resultados</a></li>
-                    <li><a href="pages/contact.html">Contacto</a></li>
+                    <li><a href="pages/contact.html">Soporte</a></li>
                 </ul>
                 <button id="theme-toggle" title="Toggle theme"><i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i></button>
             </nav>
@@ -286,6 +280,7 @@
                         <p>Estudia la "Guía" del mercado con atención porque contiene información clave para diseñar vuestra estrategia.</p>
                     </blockquote>
                     <p>El planteamiento está basado en el mercado de productos de protección solar, por reunir ciertas características que lo hacen idóneo: (i) es un mercado de productos de gran consumo, (ii) permite simular comportamientos diferentes según el tipo de consumidor, (iii) el grado de innovación es alto, permitiendo distintas configuraciones de producto, y (iv) todas las variables del Marketing juegan un papel más o menos relevante en el proceso de comercialización.</p>
+                    <br/>
                     <p>Técnicamente, el simulador está basado en un <a href="https://es.wikipedia.org/wiki/Modelo_basado_en_agente">"Modelo de Agentes (ABM)"</a>. Estos modelos simulan el comportamiento individual de cada consumidor en lugar de usar modelos agregados, más simples, pero menos realistas.</p>
                 </div>
             </div>

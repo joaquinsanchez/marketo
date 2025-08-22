@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Marketo</title>
-    <!-- Google Fonts & Font Awesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Contacto | Marketo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <style>
         /* --- 1. CSS Variables and Global Styles --- */
         html, body { scrollbar-width: none; -ms-overflow-style: none; overflow: -moz-scrollbars-none; }
         html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
@@ -61,16 +58,16 @@
         #theme-toggle { background: none; border: none; color: var(--accent-color); font-size: 1.4rem; cursor: pointer; padding: 5px; display: flex; align-items: center; justify-content: center; }
         #theme-toggle .fa-sun { display: none; }
         body.light-mode #theme-toggle .fa-sun { display: block; }
-        body.light-mode #theme-toggle .fa-moon { display: none; }
-        .hamburger-menu { display: none; }        /* --- 3. Page Specific Styles --- */
-        main { padding-top: var(--navbar-height); }
-        .footer { background-color: var(--primary-surface-color); color: var(--text-color); text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); }        /* Main Contact Section */
-        .contact-content { 
+        body.light-mode #theme-toggle .fa-moon { display: none; }        .hamburger-menu { display: none; }
+        
+        main { padding-top: var(--navbar-height); }        .footer { background-color: var(--primary-surface-color); color: var(--text-color); text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); }
+        
+        .contact-content {
             display: flex; 
             flex-direction: column;
-            align-items: center; 
-            gap: 60px;
-        }        /* Profile Card */
+            align-items: center;            gap: 60px;
+        }
+        
         .contact-profile {
             display: flex;
             justify-content: center;
@@ -101,9 +98,9 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-color), var(--accent-hover-color));
-        }        /* Main Professor Card */
+            height: 4px;            background: linear-gradient(90deg, var(--accent-color), var(--accent-hover-color));
+        }
+        
         .main-profile {
             padding: 40px;
             flex: 0 1 400px;
@@ -156,9 +153,10 @@
         }
         .profile-institution {
             color: var(--text-color);
-            opacity: 0.8;
-            margin-bottom: 20px;
-        }        .profile-contact {
+            opacity: 0.8;            margin-bottom: 20px;
+        }
+        
+        .profile-contact {
             margin-bottom: 20px;
         }
         .contact-item {
@@ -178,11 +176,9 @@
             color: var(--accent-color);
             font-weight: 500;
         }
-        .contact-item a:hover {
-            color: var(--accent-hover-color);
+        .contact-item a:hover {            color: var(--accent-hover-color);
         }
 
-        /* FAQ Section */
         .faq-section {
             background-color: var(--primary-surface-color);
             padding: 80px 0;
@@ -242,13 +238,11 @@
         .faq-answer p {
             margin: 0;
             color: var(--text-color);
-            line-height: 1.6;
-            padding-top: 15px;
-        }/* --- 4. Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            .section-title { font-size: 2rem; }
+            line-height: 1.6;            padding-top: 15px;
+        }
+        
+        @media (max-width: 768px) {            .section-title { font-size: 2rem; }
             
-            /* --- Navbar Fixes --- */
             .navbar .container { justify-content: space-between; }
             .hamburger-menu { display: block; font-size: 1.5rem; color: var(--heading-color); background: transparent; border: none; cursor: pointer; z-index: 1002; }
             .nav-menu {
@@ -259,10 +253,8 @@
                 box-shadow: -5px 0 15px rgba(0,0,0,0.2); padding: 20px;
             }
             .nav-menu.active { right: 0; }
-            .nav-links { flex-direction: column; gap: 25px; width: 100%; text-align: center; margin-top: 40px; }
-            .dropdown:hover .dropdown-menu { display: none; }
+            .nav-links { flex-direction: column; gap: 25px; width: 100%; text-align: center; margin-top: 40px; }            .dropdown:hover .dropdown-menu { display: none; }
             
-            /* --- Mobile Dropdown/Accordion Styles --- */
             .dropdown > a { display: flex; justify-content: center; align-items: center; gap: 8px; }
             .dropdown > a i { display: inline-block; transition: transform 0.3s ease; }
             .dropdown.open > a i { transform: rotate(180deg); }
@@ -272,10 +264,10 @@
                 padding: 10px 0; margin-top: 15px; border-radius: 8px;
             }
             body.light-mode .dropdown .dropdown-menu { background-color: rgba(0,0,0,0.05); }
-            .dropdown.open .dropdown-menu { display: block; }
-            .dropdown-menu li a { padding: 10px 20px; font-size: 0.9rem; }
-            #theme-toggle { position: absolute; bottom: 30px; }            /* --- Contact Page Mobile Adjustments --- */
-            .contact-content { 
+            .dropdown.open .dropdown-menu { display: block; }            .dropdown-menu li a { padding: 10px 20px; font-size: 0.9rem; }
+            #theme-toggle { position: absolute; bottom: 30px; }
+            
+            .contact-content {
                 flex-direction: column; 
                 align-items: center;
                 gap: 40px;
@@ -298,12 +290,10 @@
                 width: 120px;
                 height: 120px;
             }
-            
-            .profile-card:hover {
+              .profile-card:hover {
                 transform: none;
             }
             
-            /* FAQ Mobile Adjustments */
             .faq-question {
                 padding: 20px;
             }
@@ -315,11 +305,12 @@
             .faq-item.active .faq-answer {
                 padding: 0 20px 20px 20px;
             }
-            
-            section {
+              section {
                 padding: 60px 0;
             }
-        }          @media (max-width: 480px) {
+        }
+        
+        @media (max-width: 480px) {
             .main-profile {
                 padding: 25px 15px;
             }
@@ -330,7 +321,7 @@
     <header class="navbar">
       <div class="container">
         <a class="navbar-logo" href="../index.html"
-          ><i class="fa-solid fa-chart-simple"></i>Marketo!</a
+          ><i class="fa-solid fa-chart-simple"></i>Mar<span style="color: var(--accent-color)">k</span>eto!</a
         ><button aria-label="Toggle menu" class="hamburger-menu">
           <i class="fa-solid fa-bars"></i>
         </button>
@@ -351,49 +342,23 @@
 
             <li><a href="guia-fase5.html">Dinámica de juego</a></li>
             <li><a href="decisiones.html">Decisiones y resultados</a></li>
-            <li><a href="contact.html" class="active">Contacto</a></li>
+            <li><a href="contact.html" class="active">Soporte</a></li>
           </ul>
           <button id="theme-toggle" title="Toggle theme">
             <i class="fa-solid fa-moon"></i><i class="fa-solid fa-sun"></i>
           </button>
         </nav>
       </div>
-    </header>    <main>
-        <section id="contact-page">
+    </header>    <main>        <section id="contact-page">
             <div class="container">
-                <h1 class="section-title">Datos de contacto</h1>                <div class="contact-content">
+                <h1 class="section-title">¿Necesitas ayuda?</h1>
+                
+                <div class="intro-text" style="max-width: 800px; margin: 0 auto 60px auto; text-align: center;">
+                    <p style="margin-bottom: 20px; font-size: 1.1rem; line-height: 1.7;">
+                       Aquí tienes los datos de contacto para resolver cualquier problema <b>de tipo técnico</b> que te surja con el simulador: claves de acceso, navegación web, introducción de decisiones, etc. 
+                    </p>
+                </div>                <div class="contact-content">
                     <div class="contact-profile">
-                        <!-- First Professor Card -->
-                        <div class="profile-card main-profile">
-                            <div class="profile-image-container">
-                                <img src="../images/facul.jpg" alt="Prof. Teresa Pintado" class="profile-image">
-                                <div class="profile-badge">
-                                    <i class="fa-solid fa-graduation-cap"></i>
-                                </div>
-                            </div>
-                            <div class="profile-info">
-                                <h3>Prof. Teresa Pintado</h3>
-                                <p class="profile-title">Profesor Responsable</p>
-                                <p class="profile-department">Departamento de Marketing</p>
-                                <p class="profile-institution">Universidad Complutense de Madrid</p>
-                                <div class="profile-contact">
-                                    <div class="contact-item">
-                                        <i class="fa-solid fa-envelope"></i>
-                                        <span><a href="mailto:tpintado@ucm.es">tpintado@ucm.es</a></span>
-                                    </div>
-                                    <div class="contact-item">
-                                        <i class="fa-solid fa-phone"></i>
-                                        <span>+34 91 394 71 28</span>
-                                    </div>
-                                    <div class="contact-item">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                        <span>Despacho C-112</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Second Professor Card -->
                         <div class="profile-card main-profile">
                             <div class="profile-image-container">
                                 <img src="../images/facul.jpg" alt="Prof. Joaquín Sánchez" class="profile-image">
@@ -423,11 +388,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>            </div>
         </section>
 
-        <!-- FAQ Section -->
         <section id="faq-section" class="faq-section">
             <div class="container">
                 <h2 class="section-title">Preguntas frecuentes</h2>
@@ -468,7 +431,7 @@
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            <p>Una vez que hayas enviado tus decisiones para un período, no es posible modificarlas. Por eso es importante revisar cuidadosamente todas las decisiones antes de confirmar el envío. Te recomendamos discutir las estrategias con tu equipo antes de tomar decisiones finales.</p>
+                            <p>Una vez que hayas enviado tus decisiones para un período, no es posible modificarlas. Por eso es importante revisar cuidadosamente todas las decisiones antes de confirmar el envío.</p>
                         </div>
                     </div>
                 </div>
@@ -483,35 +446,27 @@
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-        const navbar = document.querySelector('.navbar');
-        const hamburger = document.querySelector('.hamburger-menu');
+        const navbar = document.querySelector('.navbar');        const hamburger = document.querySelector('.hamburger-menu');
         const navMenu = document.querySelector('.nav-menu');
 
-        // --- Theme Management ---
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
             body.classList.add('light-mode');
         }
         themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+            body.classList.toggle('light-mode');            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
         });
 
-        // --- Navbar Scroll Effect ---
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
                 navbar.classList.add('navbar-scrolled');
             } else {
-                navbar.classList.remove('navbar-scrolled');
-            }
+                navbar.classList.remove('navbar-scrolled');            }
         });
 
-        // --- Hamburger Menu Toggle ---
         hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+            navMenu.classList.toggle('active');        });
 
-        // --- Mobile Accordion Dropdown Logic ---
         document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
             dropdownLink.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
@@ -519,27 +474,23 @@
                     const dropdown = dropdownLink.parentElement;
                     dropdown.classList.toggle('open');
                 }
-            });
-        });
+            });        });
 
-        // --- Click outside to close mobile menu ---
         document.addEventListener('click', (e) => {
             if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !hamburger.contains(e.target)) {
                 navMenu.classList.remove('active');
-                document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
-            }
-        });        // --- Close menu when a link is clicked ---
+                document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));            }
+        });
+
         document.querySelectorAll('.nav-menu a').forEach(link => {
             if (!link.parentElement.classList.contains('dropdown')) {
                 link.addEventListener('click', () => {
                     if (navMenu.classList.contains('active')) {
                         navMenu.classList.remove('active');
                     }
-                });
-            }
-        });        // --- Contact Page Enhancements ---
-        
-        // Add hover effect for main profile image
+                });            }
+        });
+
         const profileImage = document.querySelector('.profile-image');
         if (profileImage) {
             profileImage.addEventListener('mouseenter', () => {
@@ -548,10 +499,8 @@
             
             profileImage.addEventListener('mouseleave', () => {
                 profileImage.style.transform = 'scale(1) rotate(0deg)';
-            });
-        }
+            });        }
 
-        // FAQ Accordion functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
